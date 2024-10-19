@@ -89,6 +89,9 @@ module mux4_to_1_gate (
     // OR gate to combine all AND gate outputs
     or (Y, A_and, B_and, C_and, D_and);
 endmodule
+output
+![WhatsApp Image 2024-10-19 at 15 08 22_9ead4920](https://github.com/user-attachments/assets/d9b415b7-bab4-472a-8254-6ac9fec63448)
+
 
 4:1 MUX Data Flow Implementation
 
@@ -107,6 +110,8 @@ module mux4_to_1_dataflow (
                (S1 & ~S0 & C) |
                (S1 & S0 & D);
 endmodule
+![WhatsApp Image 2024-10-19 at 15 09 46_074de80e](https://github.com/user-attachments/assets/379771eb-bb62-4bbb-912e-0b527124510e)
+
 
 4:1 MUX Behavioral Implementation
 
@@ -130,6 +135,8 @@ module mux4_to_1_behavioral (
         endcase
     end
 endmodule
+![WhatsApp Image 2024-10-19 at 15 11 24_a941117b](https://github.com/user-attachments/assets/6dee0d4c-cedd-4c42-aa4e-2acda30a447b)
+
 
 4:1 MUX Structural Implementation
 
@@ -163,6 +170,7 @@ module mux4_to_1_structural (
     // Instantiate the final 2:1 MUX
     mux2_to_1 mux_final (.A(mux_low), .B(mux_high), .S(S1), .Y(Y));
 endmodule
+![WhatsApp Image 2024-10-19 at 15 12 12_a823d201](https://github.com/user-attachments/assets/3ad33d37-dc5c-43d4-b32f-a5ad19e5faf1)
 
 Testbench Implementation
 
@@ -262,6 +270,7 @@ Time=20 | S1=0 S0=0 | Inputs: A=0 B=0 C=0 D=1 | Y_gate=0 | Y_dataflow=0 | Y_beha
 Time=30 | S1=0 S0=1 | Inputs: A=0 B=0 C=0 D=1 | Y_gate=0 | Y_dataflow=0 | Y_behavioral=0 | Y_structural=0
 Time=40 | S1=1 S0=0 | Inputs: A=0 B=0 C=0 D=1 | Y_gate=0 | Y_dataflow=0 | Y_behavioral=0 | Y_structural=0
 ...
+![WhatsApp Image 2024-10-19 at 15 12 56_1321613d](https://github.com/user-attachments/assets/25530c1e-709e-4200-b43a-251485259172)
 
 Conclusion:
 
